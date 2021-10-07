@@ -18,3 +18,8 @@ To see all the names that are participating, type:
 ```
 !listnames
 ```
+
+To run the game and match people, type:
+```
+!match
+```
