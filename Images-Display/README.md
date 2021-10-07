@@ -6,22 +6,22 @@ When a user writes the command with ! in front, the bot shows the image reffing 
 
 ## Commands
 
-To add a new command and image, write:
+To add a new command and image, type:
 ```
 !addimage <command> <image-link>
 ```
 
-To delete a command and image, write:
+To delete a command and image, type:
 ```
 !delimage <command>
 ```
 
-To list all commands, write:
+To list all commands, type:
 ```
 !listimages
 ```
 
-To show a image, previously stored, write:
+To show a image, previously stored, type:
 ```
 !<command>
 ```
