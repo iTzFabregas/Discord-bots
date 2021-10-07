@@ -1,7 +1,7 @@
 import discord
 import random
 
-TOKEN = 'ODk1NDgzNTI5MzczMzE5MTg5.YV5OBg.Ih_hR2-aWg5ya3LIG_Ri_5Ryhm8'
+TOKEN = 'YOUR-BOT-TOKEN'
 
 client = discord.Client()
 
