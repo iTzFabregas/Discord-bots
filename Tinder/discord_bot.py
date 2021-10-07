@@ -2,8 +2,7 @@ import discord
 import random
 
 #PUT YOUR BOT TOKEN HERE
-#TOKEN = 'YOUR-BOT-TOKEN'
-TOKEN = 'ODk1NDgzNTI5MzczMzE5MTg5.YV5OBg.Z4NuyfrDhuPOBHLARrYgMhtfhzY'
+TOKEN = 'YOUR-BOT-TOKEN'
 
 client = discord.Client()
 
