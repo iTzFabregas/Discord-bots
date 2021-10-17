@@ -2,10 +2,7 @@ import requests
 import json
 import discord
 
-#PUT YOUR BOT TOKEN HERE
-TOKEN = 'YOUR-BOT-TOKEN'
 client = discord.Client()
-
 
 divided_word = []
 divided_player_word = []
@@ -18,13 +15,14 @@ word = ''
 
 @client.event
 async def on_ready():
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='voce pelado >:)'))
     print('ONLINE: {0.user}\n'.format(client))
 
 @client.event
 async def on_message(message):
-    username = str(message.author).split('#')[0]
+    # username = str(message.author).split('#')[0]
     user_message = str(message.content)
-    channel = str(message.channel.name)
+    # channel = str(message.channel.name)
 
     global divided_word 
     global divided_player_word    
@@ -39,7 +37,7 @@ async def on_message(message):
         return
     
     if user_message.startswith('!status'):
-        await message.channel.send('TO FUNCIONANDO KRL')
+        await message.channel.send('(Forca) Ainda to rodando no replit...')
 
     if(user_message.startswith('!start')):
         while True:
@@ -59,14 +57,14 @@ async def on_message(message):
             divided_word.append(i)
             player_word = player_word + '\_\_   '
 
-        await message.channel.send('\nDEFINITION: ' + tip_definition)
+        # await message.channel.send('\nDEFINITION: ' + tip_definition)
         # await message.channel.send(word)
         print(word)
         print(player_word)
         await message.channel.send(player_word)
 
         is_the_game_running = 1
-        await message.channel.send('\nTO PLAY TYPE \"!play <lower letter>\"')
+        await message.channel.send('\nTO PLAY TYPE: \"!play <lower letter>\"')
         return
 
     elif user_message.startswith('!play'):
@@ -87,29 +85,38 @@ async def on_message(message):
             if flag == 0:
                 total_lifes -= 1
                 await message.channel.send(f"YOU STILL HAVE {total_lifes} LIFE(S)!")
-                return
-
-            player_word = ""
-            for i in divided_player_word:
-                if i == '-':
-                    player_word += '\_\_   '
-                    continue
-                player_word += i.upper() + '  '
-
-            await message.channel.send(player_word)
-
+            else:
+              player_word = ""
+              for i in divided_player_word:
+                  if i == '-':
+                      player_word += '\_\_   '
+                      continue
+                  player_word += i.upper() + '  '
+              await message.channel.send(player_word)
+            the_game_is_over = 0
             if total_lifes <= 0:
-                await message.channel.send("CONGRATULATIONS!!! YOU LOSE :)")
-                await message.channel.send(f"The word was {word}")
-                return
-            elif right_letters == num_letters:
-                await message.channel.send(f"CONGRATULATIONS!!! YOU WIN WITH {total_lifes} LIFE(S)")
-                return
+              await message.channel.send("CONGRATULATIONS!!! YOU LOSE :)")
+              await message.channel.send(f"The word was {word}")
+              the_game_is_over = 1
 
+            elif right_letters == num_letters:
+              await message.channel.send(f"CONGRATULATIONS!!! YOU WIN WITH {total_lifes} LIFE(S)")
+              the_game_is_over = 1
+          
+            if the_game_is_over == 1:
+              divided_word = []
+              divided_player_word = []
+              player_word = ''
+              is_the_game_running = 0
+              total_lifes = 5
+              right_letters = 0
+              num_letters = 0
+              word = ''
+              return
         else:
             await message.channel.send('THERE IS NO GAME RUNNING AT THE MOMENT!')
             await message.channel.send('START A NEW GAME TYPING \"!start\"')
 
         return
 
-client.run(TOKEN)
+client.run('YOUR-BOT-TOKEN')
