@@ -3,7 +3,7 @@ import json
 import discord
 
 #PUT YOUR BOT TOKEN HERE
-TOKEN = 'ODk1NDgzNTI5MzczMzE5MTg5.YV5OBg.xeHdtBc5368SROT_Qf0Mw2aXM5E'
+TOKEN = 'YOUR-BOT-TOKEN'
 client = discord.Client()
 
 
