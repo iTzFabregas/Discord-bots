@@ -35,9 +35,6 @@ async def on_message(message):
 
     if message.author == client.user:
         return
-    
-    if user_message.startswith('!status'):
-        await message.channel.send('(Forca) Ainda to rodando no replit...')
 
     if(user_message.startswith('!start')):
         while True:
