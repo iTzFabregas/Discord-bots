@@ -54,7 +54,7 @@ async def on_message(message):
             divided_word.append(i)
             player_word = player_word + '\_\_   '
 
-        # await message.channel.send('\nDEFINITION: ' + tip_definition)
+        await message.channel.send('\nDEFINITION: ' + tip_definition)
         # await message.channel.send(word)
         print(word)
         print(player_word)
