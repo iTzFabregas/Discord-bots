@@ -97,7 +97,7 @@ async def on_message(message):
               the_game_is_over = 1
 
             elif right_letters == num_letters:
-              await message.channel.send(f"CONGRATULATIONS!!! YOU WIN WITH {total_lifes} LIFE(S)")
+              await message.channel.send(f"CONGRATULATIONS!!! YOU WIN WITH {total_lifes} EXTRA LIFE(S)")
               the_game_is_over = 1
           
             if the_game_is_over == 1:
