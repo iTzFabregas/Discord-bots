@@ -16,10 +16,10 @@ async def on_member_update(before, after):
   if str(after.name) == 'member_name':
     if str(after.status) != 'offline':
       channel = client.get_channel('channel_id')
-      await channel.send(f'>>>>>> {after.name} ESTÁ ONLINE! <<<<<<')
+      await channel.send(f'>>>>>> {after.name} IS ONLINE! <<<<<<')
     elif str(after.status) == 'offline':
       channel = client.get_channel('channel_id')
-      await channel.send(f'\>\>\> {after.name} SE DESCONECTOU! <<<')
+      await channel.send(f'\>\>\> {after.name} IS OFFLINE! <<<')
 
 
 @client.event
