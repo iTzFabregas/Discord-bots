@@ -15,11 +15,10 @@ async def on_member_update(before, after):
   print(f'{after.name} is now {after.status}')
   if str(after.name) == 'member_name':
     if str(after.status) != 'offline':
-      channel = client.get_channel(943303600854167552)
+      channel = client.get_channel('channel_id')
       await channel.send(f'>>>>>> {after.name} ESTÁ ONLINE! <<<<<<')
     elif str(after.status) == 'offline':
-      channel = client.get_channel(943303600854167552)
-      await channel.send('https://tenor.com/view/sad-cry-crying-tears-broken-gif-15062040')
+      channel = client.get_channel('channel_id')
       await channel.send(f'\>\>\> {after.name} SE DESCONECTOU! <<<')
 
 
