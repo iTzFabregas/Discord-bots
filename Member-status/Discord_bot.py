@@ -30,7 +30,7 @@ async def on_message(message):
       return
     
     if user_message.startswith('!status'):
-      await message.channel.send('(Bot) Ainda to rodando no vscode...')
+      await message.channel.send('(Bot) Online...')
     return 
 
 client.run('BOT_TOKEN')
